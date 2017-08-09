@@ -1,20 +1,55 @@
 .card{
+  position: relative;
   width: 200px;
-  height: 340px;
-  padding: 5px;
-  background: burlywood;
-  border-radius: 5px;
+  height: 300px;
+  padding: 10px;
+  margin: 6.76px;
+  background: #f26000;
+  border-radius: 30px;
   text-align: center;
-  border: 2px solid black;
+  border: 2px solid #333;
+  color: white;
+  cursor: pointer;
 }
 
-.card::first-letter{
+
+.name {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.name::first-letter{
   text-transform:capitalize;
 }
 
 .destroy {
-  font-size: 20px;
-  color: red;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  font-size: 24px;
+  color: #333;
   border: none;
   background: none;
+}
+
+.destroy:after {
+  content: "\d7";
+}
+
+.abilities {
+  border-top: 1px solid;
+}
+
+.abilities div::first-letter{
+  text-transform:capitalize;
+}
+
+.stats {
+  text-align: left;
+  border-top: 1px solid;
+}
+
+.stats div::first-letter{
+  text-transform:capitalize;
 }

@@ -3,7 +3,7 @@ import React from 'react'
 import styles from './style.less'
 
 export default ({ setFilter, addPokemon, pokemons, filter }) => (
-  <div>
+  <div className={styles.filter}>
     <input placeholder='Choose your favourite pokemons!' className={styles.search} onChange={e => setFilter(e.target.value)} value={filter}/>
     <div className={styles.filtered}>
     {
