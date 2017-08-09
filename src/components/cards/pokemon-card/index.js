@@ -8,6 +8,7 @@ import Loader from 'components/others/loader'
 
 export default compose(
   withRouter,
+  // love such simplicity ^_^
   connect(state => ({ pokemons: state.pokemons.data }), actions),
   mapProps(
     ({ pokemons, name, history, removePokemon }) => ({

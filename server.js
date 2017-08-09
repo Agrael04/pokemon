@@ -4,6 +4,9 @@ import webpack from 'webpack'
 import wdm from 'webpack-dev-middleware'
 import whm from 'webpack-hot-middleware'
 
+
+// gh-pages in enough, i guess, for such dummy functionality )
+
 const app = express()
 
 if (process.env.NODE_ENV !== 'production') {
