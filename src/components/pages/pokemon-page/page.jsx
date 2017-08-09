@@ -14,12 +14,12 @@ export default ({ pokemon, showCollection }) => (
       <img src={pokemon.sprites.front_default} className={styles.image}/>
       <StatsList stats={pokemon.stats}/>
       <AbilList abilities={pokemon.abilities}/>
-      <TypesList types={pokemon.types}/> 
+      <TypesList types={pokemon.types}/>
     </div>
     <div className={styles.left}>
       <div className={styles.expirience}>Expirience {pokemon.base_experience}</div>
       <div className={styles.weight}>Weight {pokemon.weight}</div>
-      <div className={styles.height}>Height {pokemon.height}</div> 
+      <div className={styles.height}>Height {pokemon.height}</div>
     </div>
     <div className={styles.right}>
       <MovesList moves={pokemon.moves.filter((move, key) => key < 30)}/>
