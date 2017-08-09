@@ -22,6 +22,7 @@ export default compose(
   mapProps(props => ({
     ...props,
     pokemons: props.filter ? props.pokemons.filter(
+      // case sensitive ?
       pokemon => pokemon.name.includes(props.filter)
     ).filter((item, key) => key < 5) : [],
     addPokemon: name => {
