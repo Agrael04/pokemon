@@ -9,7 +9,8 @@ export default compose(
     filteredPokemons: state.filter.filter ? state.pokemons.data.filter(
       pokemon => pokemon.name.includes(state.filter.filter)
     ).filter((item, key) => key < 5) : [],
-    collectedPokemons: state.collection.pokemons
+    collectedPokemons: state.collection.pokemons,
+    filter: state.filter.filter
   }), actions),
   mapProps(props => ({
     ...props,
