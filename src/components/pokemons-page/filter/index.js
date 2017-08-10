@@ -1,8 +1,8 @@
 import { compose, mapProps, branch, renderComponent } from 'recompose'
 import { connect } from 'react-redux'
 
-import Filter from './filter'
-import Loader from 'components/others/loader'
+import Component from './component'
+import Loader from 'components/loader'
 import actions from 'store/actions'
 
 export default compose(
@@ -16,6 +16,7 @@ export default compose(
   ),
   mapProps(props => ({
     ...props,
+    setFilter: e => props.setFilter(e.target.value),
     pokemons: props.filter ? props.pokemons.filter(
       pokemon => pokemon.name.includes(props.filter)
     ).filter((item, key) => key < 5) : [],
@@ -25,4 +26,4 @@ export default compose(
       props.setFilter('')
     }
   }))
-)(Filter)
+)(Component)

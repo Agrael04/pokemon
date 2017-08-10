@@ -2,20 +2,20 @@ import { compose, mapProps, branch, renderComponent } from 'recompose'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 
-import Card from './card'
+import Component from './component'
 import actions from 'store/actions'
-import Loader from 'components/others/loader'
+import Loader from 'components/loader'
 
 export default compose(
   withRouter,
   connect(state => ({ pokemons: state.pokemons.data }), actions),
   mapProps(
-    ({ pokemons, name, history, removePokemon }) => ({
-      pokemon: pokemons.find(item => item.name == name),
-      showPokemon: () => history.push(`/pokemon/${name}`),
+    ({ pokemons, item, history, removePokemon }) => ({
+      pokemon: pokemons.find(pokemon => pokemon.name == item),
+      showPokemon: () => history.push(`/pokemon/${item}`),
       removePokemon: e => {
         e.stopPropagation()
-        removePokemon(name)
+        removePokemon(item)
       }
     })
   ),
@@ -23,4 +23,4 @@ export default compose(
     ({ pokemon }) => !pokemon.sprites,
     renderComponent(Loader)
   )
-)(Card)
+)(Component)

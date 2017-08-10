@@ -1,20 +1,20 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { Router, Route, Switch } from 'react-router'
-import Loadable from 'react-loadable'
 import createBrowserHistory from 'history/createBrowserHistory'
 
 import styles from './style.less'
 
-import loading from 'components/others/loader'
+import Loadable from 'react-loadable'
+import loading from 'components/loader'
 
 const Pokemon = Loadable({
-  loader: () => import('components/pages/pokemon-page'),
+  loader: () => import('components/pokemon-page'),
   loading
 })
 
 const Pokemons = Loadable({
-  loader: () => import('components/pages/pokemons-page'),
+  loader: () => import('components/pokemons-page'),
   loading
 })
 

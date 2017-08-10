@@ -1,16 +1,10 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 
-import pokemons from './reducers/pokemons'
-import filter from './reducers/filter'
-import collection from './reducers/collection'
+import reducers from './reducers'
 
 const store = createStore(
-  combineReducers({
-    pokemons,
-    filter,
-    collection
-  }),
+  reducers,
   applyMiddleware(thunk)
 )
 
